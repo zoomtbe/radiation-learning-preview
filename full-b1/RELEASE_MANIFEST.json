@@ -17,9 +17,9 @@
   "duration_measured": false,
   "open_expert_decisions": 7,
   "files": 448,
-  "bytes": 60076590,
+  "bytes": 60076632,
   "entry": "index.html",
-  "notes": "Static files only; no build step, no server code, no telemetry. Progress and notes stay in the viewer's browser. Public-label correction: first-name-only screen-reader label; review wording applies online.",
+  "notes": "Static files only; no build step, no server code, no telemetry. Progress and notes stay in the viewer's browser. Public-label correction: first-name-only screen-reader label; review wording applies online. Flat deployment resolves the presenter image relative to rig.js.",
   "file_list": [
     {
       "path": ".nojekyll",
@@ -723,8 +723,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 6350,
-      "sha256": "2f67934e858dd1cf2a92e8793aa8ca0e31b5d23071e4ec385f18c4f18cf33584"
+      "bytes": 6388,
+      "sha256": "87a78404d87d3bd1947a494f3ab20bbe0e56160a08064b674375aab5b6e4c671"
     },
     {
       "path": "L1-I00-distinct.mp3",
@@ -2238,8 +2238,8 @@
     },
     {
       "path": "rig.js",
-      "bytes": 37452,
-      "sha256": "6a2a72761a51bda4dfb29fd0e6766ae2056f64efe5930bd212d4aad759091552"
+      "bytes": 37456,
+      "sha256": "51b9555c0a2a378cdfa7fd8598f7520631b1f9dc06079cf50d9f3c435ba6a8bf"
     },
     {
       "path": "rt-technician-640.png",

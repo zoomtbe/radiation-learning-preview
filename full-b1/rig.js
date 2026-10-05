@@ -9,7 +9,7 @@
  */
 (function () {
   'use strict';
-  const BASE = (document.currentScript && document.currentScript.src || '').replace(/js\/rig\.js.*$/, '');
+  const BASE = new URL('./', (document.currentScript && document.currentScript.src) || document.baseURI).href;
   const L = {
     size: [649, 1536],
     lip: [[274.4, 207.8], [283.3, 208.9], [298.9, 207.1], [314.4, 203.3], [331.1, 194.4]],
