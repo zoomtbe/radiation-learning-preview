@@ -209,7 +209,7 @@
     const canvas = document.createElement('canvas');
     canvas.className = 'emilia-canvas';
     canvas.setAttribute('role', 'img');
-    canvas.setAttribute('aria-label', 'Emilia Nowak, your course presenter');
+    canvas.setAttribute('aria-label', 'Emilia, your course presenter');
     container.appendChild(canvas);
     const gl = canvas.getContext('webgl', { premultipliedAlpha: true, alpha: true, antialias: true });
     const state = {

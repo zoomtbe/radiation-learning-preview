@@ -869,7 +869,7 @@
       <h1 id="homeTitle">Belgian framework and your responsibilities</h1>
       <p class="lead">A theoretical course for people who work with sources and radiation-generating devices in Belgian class II industry. Six lessons take you from who is who to how the framework works on an ordinary working day.</p>
       <div class="row"><button class="btn" data-open="${esc(lesson.id)}">${anyStarted ? `Continue lesson ${lessonNo}` : 'Start the first lesson'}</button><button class="btn ghost" data-drawer="map">Course map</button></div>
-      <p class="meta">Local review build · draft lessons awaiting recognised-expert review · no tracking: progress stays in this browser.</p></div>
+      <p class="meta">Review build · draft lessons awaiting recognised-expert review · no tracking: progress stays in this browser.</p></div>
       <div class="hero-visual"><div class="emilia-home" id="homeEmilia"></div><div class="who"><b>Emilia</b>Head of a physical control service. Your guide through this module.</div></div></div>
       <h2 style="margin:34px 0 4px;font:600 20px/1.3 var(--font-d)">Lessons in this module</h2>
       <div class="lessons">${C.lessons.map((l, i) => {
