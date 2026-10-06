@@ -459,7 +459,8 @@
     else if (kind === 'unknown' || kind === 'open') related = list('What is known so far', others.filter((x) => x.kind === 'fact' || x.kind === 'ok')) + list('What follows from it', others.filter((x) => x.kind === 'held'));
     else if (kind === 'fact') related = list('Still open or on hold on this card', others.filter((x) => x.kind === 'unknown' || x.kind === 'open' || x.kind === 'held'));
     else related = list('Related on this card', others.slice(0, 4));
-    stResume = !audio.paused && P.mode === 'narration';
+    // An ended clip is paused during the scheduled paragraph gap, but the lesson is still playing.
+    stResume = P.mode === 'narration' && (P.playing || !audio.paused);
     if (!audio.paused) audio.pause(); clearGap(); if (stResume) P.playing = false; reflectPlay();
     stOpener = btn;
     stPanel.className = 'st-panel st-' + s;
@@ -481,7 +482,12 @@
     if (stPanel.hidden) return;
     stPanel.hidden = true; stPanel.innerHTML = '';
     if (stOpener && document.contains(stOpener)) stOpener.focus({ preventScroll: true });
-    if (stResume) { stResume = false; P.playing = true; playAudio(); reflectPlay(); }
+    if (stResume) {
+      stResume = false;
+      // Continue to the next paragraph if the explanation interrupted the gap after a clip.
+      if (audio.ended || (audio.duration && audio.currentTime >= audio.duration - 0.05)) goto(P.idx + 1, 0, true);
+      else { P.playing = true; playAudio(); reflectPlay(); }
+    }
   }
   stPanel.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeStatus(); } if (e.key === 'Tab') { e.preventDefault(); $('.stp-close', stPanel).focus(); } });
   document.addEventListener('pointerdown', (e) => { if (!stPanel.hidden && !stPanel.contains(e.target) && !e.target.closest('.st')) closeStatus(); });
