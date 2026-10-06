@@ -1,6 +1,6 @@
 {
- "release": "full_b1_2d_2026-10-06_r2",
- "build": "full-b1-2d-2026-10-06-r2",
+ "release": "full_b1_2d_2026-10-06_r2_1",
+ "build": "full-b1-2d-2026-10-06-r2.1",
  "kind": "review build of all six B1 lessons (2D revision) for owner and recognised-expert review",
  "lessons": [
   "B1.1",
@@ -45,7 +45,7 @@
  "duration_measured": false,
  "open_expert_decisions": 7,
  "files": 645,
- "bytes": 83519709,
+ "bytes": 83521218,
  "entry": "index.html",
  "notes": "Static files only; no build step, no server code, no telemetry. Progress and notes stay in the viewer's browser.",
  "file_list": [
@@ -3221,8 +3221,8 @@
   },
   {
    "path": "data/content.js",
-   "bytes": 504115,
-   "sha256": "3191e8a06b02d591cdfc3be16ec53529da780f6e01699d052bbe5431011baf9f"
+   "bytes": 504119,
+   "sha256": "dce598a5e405c3ae21b9f62ace9ecfb3b75e875a1d73f3e0094949849eb529d7"
   },
   {
    "path": "data/media.js",
@@ -3241,8 +3241,8 @@
   },
   {
    "path": "js/app.js",
-   "bytes": 91586,
-   "sha256": "f6b6ee2897c0f4ed2ba615be64119e275be85f27bdf586ac854de6448e03eaa8"
+   "bytes": 93091,
+   "sha256": "2014594799cfdddd73071d3f4fa65ad9718ee924de08d244f5c8aa6f2661f1e2"
   },
   {
    "path": "js/boards.js",
@@ -3274,5 +3274,6 @@
    "bytes": 1366,
    "sha256": "22d7b1c352e9bfd1e549833643eda232ebe9554684716055d2c2c3c2b1bc7c25"
   }
- ]
+ ],
+ "post_publication_fix": "Status explanations opened during a narration gap resume at the next paragraph; opening while manually paused remains paused."
 }
