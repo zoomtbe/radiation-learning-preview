@@ -12,11 +12,21 @@ estimates, not measured study time. Recognised-expert review is pending.
   Changes: cropped to the weld detail and resized; the adaptation is shared under CC BY-SA 4.0.
   A welded pipe joint photographed in Germany; it does not show that this pipe was radiographed.
 
-## Original illustrations (not photographs)
-- Emilia, the presenter, and the industrial radiographer in the roles picture: original illustrated characters; they do not depict real people.
+## Characters (original illustrations, not photographs)
+- Emilia (presenter), Daniel, Clara, Bram, Luc, Sofia and Tom are original illustrated characters created for this course.
+  They do not depict real people; names are first names of fictional colleagues.
+- The handheld survey instrument Daniel carries is an original illustration based on the general form of a compact
+  electronic personal dosimeter with survey capability. It is not a product photograph and shows no readings or settings.
+  Daniel also wears an electronic personal dosimeter and a separate passive (TLD) badge, as illustrated.
+  Tom, the workshop fitter in lesson 5, is shown without any dosimeter, as described in the lesson.
+- The industrial radiographer in the roles picture is an original illustration.
+
+## Other original illustrations
 - Teaching studio background: original synthetic illustration, not a real facility.
-- Equipment drawings, roles picture, bunker cutaway, route plan, limit schematic, timelines, tables and other diagrams:
-  original illustrations for this course. They represent no manufacturer, model, settings, real installation or real dose values.
+- Bunker illustration, equipment drawings, roles picture, route plan, limit schematic, timelines, tables, documents and
+  other diagrams: original illustrations for this course. Documents are teaching samples, not real records. They represent
+  no manufacturer, model, settings, real installation or real dose values. The radiation warning sign follows the
+  standard trefoil symbol.
 
 ## Voice and lip movement
 - Narration: Microsoft neural voice "Sonia" (en-GB, synthetic), rate -4%.
