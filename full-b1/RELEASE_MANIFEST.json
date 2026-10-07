@@ -1971,8 +1971,8 @@
   },
   {
    "path": "full-b1/index.html",
-   "bytes": 3485,
-   "sha256": "342761211b449757f1f0d93b5c977d7fcf8501c8bdc58df45d72c7a193daa5be"
+   "bytes": 4445,
+   "sha256": "d4dd1225103828d8693d164e20f8f04f7e2b2904c21874b22de9ae4fc8b4b75f"
   },
   {
    "path": "full-b1/justification-path.css",
@@ -2016,8 +2016,8 @@
   },
   {
    "path": "full-b1/player.js",
-   "bytes": 21777,
-   "sha256": "94a238e874bf007e9e52e739444ab39fc16cf226594cc7c0c88430a3aefbdd87"
+   "bytes": 21849,
+   "sha256": "017c0602cafc8ab1fcbebd2a4d53de1dc123aaaaf81596fa6e8a39f10c583dce"
   },
   {
    "path": "full-b1/protection-principles.css",
