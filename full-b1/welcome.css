@@ -1,0 +1,22 @@
+/* Owner point 1: illustrated entry to the course. Local revision, not published. */
+.welcome-principles{margin:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:22px 20px 24px;background:linear-gradient(140deg,#fffef9f5,#f6f6ebed);border:1px solid #ffffffe0;border-radius:24px;box-shadow:0 14px 30px #35463b0a}
+.welcome-heading{text-align:center;flex:none}
+.welcome-heading .eyebrow{font-size:10px;letter-spacing:.17em}
+.welcome-heading h2{font-size:clamp(22px,2vw,29px);font-weight:550;line-height:1.2;margin:8px 0}
+.welcome-heading>p{font-size:16px;line-height:1.4;color:#637b71}
+.welcome-drawing{display:block;width:100%;flex:1;min-height:120px;max-height:320px;overflow:visible}
+.welcome-principle-labels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;text-align:center;flex:none}
+.welcome-principle-labels h3{font-size:19px;line-height:1.25;font-weight:600;color:#2d6259}
+.welcome-principle-labels p{font-size:15px;line-height:1.45;max-width:210px;margin:8px auto 0;color:#516860}
+.welcome-principle-labels h3{border-bottom:2px solid transparent;padding-bottom:5px;transition:border-color .3s,color .3s}
+#stage[data-cue="B1.1-S01-P1"][data-beat="0"] .welcome-principle-labels>div:nth-child(1) h3,#stage[data-cue="B1.1-S01-P1"][data-beat="1"] .welcome-principle-labels>div:nth-child(2) h3,#stage[data-cue="B1.1-S01-P1"][data-beat="2"] .welcome-principle-labels>div:nth-child(3) h3{border-bottom-color:#c7a959;color:#1d4945}
+.welcome-balance{transform-origin:135px 150px;animation:welcome-balance-settle 7s ease-in-out infinite}
+.welcome-beam{animation:welcome-beam-travel 4s ease-in-out infinite}
+.welcome-needle{transform-origin:675px 219px;animation:welcome-needle-settle 8s ease-in-out infinite}
+#stage[data-playing="false"] .welcome-balance,#stage[data-playing="false"] .welcome-beam,#stage[data-playing="false"] .welcome-needle{animation-play-state:paused}
+@keyframes welcome-balance-settle{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes welcome-beam-travel{0%,100%{transform:translateX(0);opacity:.25}50%{transform:translateX(18px);opacity:1}}
+@keyframes welcome-needle-settle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@media(max-height:820px){.welcome-principles{padding:16px 18px 18px;gap:4px}.welcome-heading h2{font-size:24px;margin:6px 0}.welcome-heading>p{font-size:14px}.welcome-principle-labels h3{font-size:18px}.welcome-principle-labels p{font-size:14px;margin-top:6px;max-width:185px}}
+@media(max-width:850px){.welcome-principles{padding:14px 9px}.welcome-heading h2{font-size:20px}.welcome-principle-labels{gap:8px}.welcome-principle-labels h3{font-size:15px}.welcome-principle-labels p{font-size:12px}.welcome-drawing{min-height:110px}}
+@media(prefers-reduced-motion:reduce){.welcome-balance,.welcome-beam,.welcome-needle{animation:none}}

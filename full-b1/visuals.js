@@ -82,6 +82,60 @@
     d.innerHTML=`<span class="person-name">${esc(data.name)}</span>`;cast.append(d);return d;
   }
   const labelHTML = text => text?`<div class="figure-caption"><span>${esc(text)}</span></div>`:'';
+  function welcomePrinciples(guide = false) {
+    return `<figure class="welcome-principles" aria-label="Welcome to radiation protection training: justification, optimisation and dose limitation.">
+      <header class="welcome-heading"><span class="eyebrow">${guide?'Your course guide':'Welcome to your training'}</span><h2>${guide?'Emilia':'Radiation protection starts here.'}</h2><p>${guide?'Head of the physical control service':'Protecting you and the people around you.'}</p></header>
+      <svg class="welcome-drawing" viewBox="0 0 810 285" role="img" aria-label="A radiation symbol connects a balance, a shield reducing exposure, and a dial with a marked boundary.">
+        <defs>
+          <linearGradient id="welcome-metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#70948c"/><stop offset=".5" stop-color="#376e68"/><stop offset="1" stop-color="#214f4e"/></linearGradient>
+          <linearGradient id="welcome-gold" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f3d675"/><stop offset="1" stop-color="#d8a43e"/></linearGradient>
+          <linearGradient id="welcome-ivory" x2="0" y2="1"><stop stop-color="#fffef7"/><stop offset="1" stop-color="#e5e6db"/></linearGradient>
+          <filter id="welcome-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#254c46" flood-opacity=".13"/></filter>
+          <g id="welcome-trefoil"><circle r="34" fill="url(#welcome-gold)" stroke="#514629" stroke-width="2"/><g fill="#283b37" transform="rotate(-30)"><path d="M-9-5L-25-14.4A29 29 0 0 1 0-29V-10A10 10 0 0 0-9-5Z"/><path d="M-9-5L-25-14.4A29 29 0 0 1 0-29V-10A10 10 0 0 0-9-5Z" transform="rotate(120)"/><path d="M-9-5L-25-14.4A29 29 0 0 1 0-29V-10A10 10 0 0 0-9-5Z" transform="rotate(240)"/><circle r="6"/></g></g>
+        </defs>
+        <path class="welcome-connection" d="M405 88V104M405 104H139Q135 104 135 110V122M405 104V126M405 104H671Q675 104 675 110V122" fill="none" stroke="#b9c9bd" stroke-width="2"/>
+        <circle cx="405" cy="104" r="4" fill="#679084"/>
+        <g transform="translate(405 49)" filter="url(#welcome-shadow)"><circle r="42" fill="#fffdf5"/><use href="#welcome-trefoil"/></g>
+        <ellipse cx="135" cy="264" rx="90" ry="9" fill="#c9d2c2" opacity=".42"/>
+        <ellipse cx="405" cy="264" rx="90" ry="9" fill="#c9d2c2" opacity=".42"/>
+        <ellipse cx="675" cy="264" rx="90" ry="9" fill="#c9d2c2" opacity=".42"/>
+        <g filter="url(#welcome-shadow)">
+          <path d="M91 257L106 248H164L179 257V263H91Z" fill="url(#welcome-metal)"/>
+          <path d="M131 150H139V250H131Z" fill="url(#welcome-gold)" stroke="#aa8741"/>
+          <g class="welcome-balance">
+            <path d="M58 163L135 147L212 163" fill="none" stroke="#376960" stroke-width="7" stroke-linecap="round"/>
+            <path d="M64 164L43 221M64 164L85 221M206 164L185 221M206 164L227 221" fill="none" stroke="#ba994e" stroke-width="2"/>
+            <path d="M39 221H89Q86 237 64 237Q42 237 39 221M181 221H231Q228 237 206 237Q184 237 181 221" fill="url(#welcome-gold)" stroke="#b39450" stroke-width="1.5"/>
+            <circle cx="64" cy="204" r="16" fill="#e6eee6" stroke="#6e998b" stroke-width="2"/>
+            <path d="M57 204L62 209L71 198" fill="none" stroke="#467c6d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="206" cy="204" r="16" fill="#eee5c8" stroke="#bda76c" stroke-width="2"/>
+            <path d="M206 196V205M206 211V212" stroke="#8e743b" stroke-width="3" stroke-linecap="round"/>
+          </g>
+          <circle cx="135" cy="150" r="7" fill="#ead39a" stroke="#b69757"/>
+        </g>
+        <g class="welcome-exposure" fill="none" stroke-linecap="round">
+          <path d="M316 174H360M310 194H360M316 214H360" stroke="#d8b258" stroke-width="4"/>
+          <path class="welcome-beam" d="M319 174H338M313 194H332M319 214H338" stroke="#f5dfa3" stroke-width="4"/>
+          <path d="M447 184H469M447 204H465" stroke="#96b2a2" stroke-width="2" stroke-dasharray="3 8"/>
+        </g>
+        <g filter="url(#welcome-shadow)">
+          <path d="M405 133Q425 149 444 151V189Q442 225 405 245Q368 225 366 189V151Q387 149 405 133Z" fill="url(#welcome-metal)" stroke="#305e57" stroke-width="2"/>
+          <path d="M405 145Q419 156 434 159V189Q432 216 405 233Q378 216 376 189V159Q392 156 405 145Z" fill="none" stroke="#b2c9b5" stroke-opacity=".65"/>
+          <g stroke="#dfeddb" stroke-width="3" stroke-linecap="round"><path d="M387 177H423M387 193H423M387 209H423"/><circle cx="398" cy="177" r="4" fill="#d6b85f"/><circle cx="414" cy="193" r="4" fill="#d6b85f"/><circle cx="395" cy="209" r="4" fill="#d6b85f"/></g>
+        </g>
+        <g filter="url(#welcome-shadow)">
+          <path d="M602 253V211A73 73 0 0 1 748 211V253Z" fill="url(#welcome-metal)" stroke="#315f5a" stroke-width="2"/>
+          <path d="M614 249V211A61 61 0 0 1 736 211V249Z" fill="url(#welcome-ivory)"/>
+          <path d="M625 222a51 51 0 0 1 76-54" fill="none" stroke="#87aa96" stroke-width="11"/>
+          <path d="M701 168a51 51 0 0 1 25 54" fill="none" stroke="#d4bb72" stroke-width="11"/>
+          <path d="M703 154L694 178" stroke="#b56e48" stroke-width="4" stroke-linecap="round"/>
+          <g class="welcome-needle"><path d="M675 219L652 180" stroke="#2b5752" stroke-width="4" stroke-linecap="round"/><circle cx="675" cy="219" r="8" fill="#2f635d"/><circle cx="675" cy="219" r="3" fill="#d4bc7c"/></g>
+          <path d="M651 239H699" stroke="#ccd5ca" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <figcaption class="welcome-principle-labels"><div><h3>Justification</h3><p>Why this use of radiation?</p></div><div><h3>Optimisation</h3><p>How can exposure be reduced?</p></div><div><h3>Dose limitation</h3><p>Are the applicable limits respected?</p></div></figcaption>
+    </figure>`;
+  }
   function photo(which, label) { return `<div class="visual-frame"><div class="image-wrap"><img class="visual-image equipment-photo" src="${which}.png" alt="${esc({gamma:'Gamma projector',xray:'Portable X-ray generator','detector-control':'Digital detector and control unit',workplace:'Radiography equipment in a workplace'}[which])}"></div>${labelHTML(label)}</div>`; }
   function route(labels, active=0) {return `<div class="route">${labels.map((l,i)=>`<div class="route-stop ${i===active?'active':''}"><div class="number">${i+1}</div><h3>${esc(l)}</h3></div>`).join('')}</div>`;}
   function timeline(items, active=0) {return `<div class="map-box"><div class="step-vertical">${items.map((s,i)=>`<div class="${i===active?'active':''}"><b>${esc(s[0])}</b><span>${esc(s[1])}</span></div>`).join('')}</div></div>`;}
@@ -134,8 +188,8 @@
     let mode=family[lid][n-1], label=labelAt(p,beat), hint=beat<0?p.start_visual:(p.beats[beat]?.show||p.start_visual);
     hint=hint||'';
     if(lid==='B1.1'&&n===1&&pn>=3) mode=pn===3?'route':'boundary';
-    if(lid==='B1.1'&&n===2&&pn===4)mode='learning-rhythm';
-    if(lid==='B1.1'&&n===3&&pn===6)mode='document';
+    if(lid==='B1.1'&&n===2)mode='course-journey';
+    if(lid==='B1.1'&&(n===3||n===4))mode='protection-roles';
     if(lid==='B1.1'&&n===14)mode=pn===1&&beat<1?'bunker':pn===1?'document':'evidence-gap';
     if(lid==='B1.1'&&n===15)mode=pn===1?(beat<1?'org':'principles'):pn===2?'folders':'recap';
     if(lid==='B1.2'&&n===1)mode=pn===1?'org':'document';
@@ -148,9 +202,12 @@
     if(lid==='B1.5'&&n===9)mode='contact-log';
     if(lid==='B1.5'&&n===12)mode=pn===1?'source-security':pn===2?'security-route':'security-criterion';
     if(lid==='B1.5'&&n===15)mode=pn===1?'lanes':'planner';
-    if(lid==='B1.1'&&n===5&&pn===1)mode='people';
-    if(lid==='B1.1'&&n===5&&pn===3)mode='principles';
-    if(lid==='B1.1'&&n===7&&p.equipment?.length)mode='equipment';
+    if(lid==='B1.1'&&n===5)mode='bram-request';
+    if(lid==='B1.1'&&n===6)mode='protection-principles';
+    
+    if(lid==='B1.1'&&n===7)mode='justification-path';
+    if(lid==='B1.1'&&n===8)mode='optimisation-hall';
+
     if(lid==='B1.1'&&n===15&&pn===3)mode='recap';
     if(lid==='B1.3'&&n===5&&/certificate|DOC-CERT/i.test(hint))mode='document';
     if(lid==='B1.3'&&n===5&&pn===3)mode='document';
@@ -161,30 +218,44 @@
     if(lid==='B1.3'&&n===8&&pn===4&&beat>=2)mode='document';
     if(lid==='B1.5'&&n===2&&pn===2)mode='known-unknown';
     if(lid==='B1.5'&&n===2&&pn===3)mode='document';
-    if(lid==='B1.1'&&n===7&&pn===5)mode='equipment-pair';
+
     if(lid==='B1.2'&&n===6&&pn===3&&beat>=0)mode='equipment-pair';
     if((lid==='B1.3'&&n===1&&pn===1)||(lid==='B1.5'&&n===1&&pn===1))mode='control-unit';
-    if(lid==='B1.1'&&n===5&&pn===2&&beat===1)mode='workplace';
+    
     if(lid==='B1.6'&&n===6&&pn===1)mode='document';
     if(lid==='B1.6'&&n===6&&pn===2)mode='site';
     if(lid==='B1.6'&&n===2&&pn===1)mode='planner';
     if(lid==='B1.4'&&n===8&&/EQ-GAMMA/i.test(hint))mode='equipment';
+    if(lid==='B1.1'&&n>=9&&n<=15)mode='b1-followup';
+    stage.classList.toggle('bram-workshop-scene',mode==='bram-request'&&pn<=2);
     const doc=chooseDoc(p,scene,lid,hint,b);
     const resumed=lid==='B1.6'&&n===6&&pn===2&&beat>=3;
     const isHeld=!resumed&&/HELD|ON HOLD|NOT STARTED|not started|on hold|use held/i.test(label+' '+hint);
     const lastPhrase = p.beats[beat]?.at || '';
     let person=(p.characters||[]).find(s=>s!=='Emilia'&&s!=='Tom')?.toLowerCase();
     const named=hint.match(/\b(Daniel|Clara|Bram|Luc|Sofia)\b/);if(named)person=named[1].toLowerCase();
-    if(mode==='org')person=null;
+    if(mode==='org'||mode==='protection-roles')person=null;
+    if(mode==='protection-principles'||mode==='justification-path'||mode==='optimisation-hall'||mode==='b1-followup')person=null;
+    if(mode==='bram-request')person=[1,2,3,5,8].includes(pn)?'bram':null;
+    if(mode==='protection-roles'&&n===3&&(pn===8||pn===9))person='daniel';
+    if(mode==='protection-roles'&&n===4&&pn===2)person=null;
     // Intro previews are intentionally one person at a time, never a row of cut-outs.
-    if(lid==='B1.1'&&n===1&&pn===2){mode='people';person=beat===1?'clara':beat===2?'bram':'daniel';if(beat>=3){person=null;mode='equipment';}}
+    if(lid==='B1.1'&&n===1&&pn===2){mode=beat<0?'guide-intro':'people';person=beat<0?null:beat===1?'clara':beat===2?'bram':'daniel';if(beat>=3){person=null;mode='equipment';}}
     if(mode==='handover'&&pn===1&&beat<1){
       if(beat>=0)stage.classList.add('handover-offer');
       stage.classList.add('without-presenter','handover-scene');sprite('emilia_poses',2,'12%',.85);sprite('clara',beat<0?0:1,beat<0?'right':'33%',.85);
       el.innerHTML=`<div class="handover-copy"><div class="eyebrow">Clara arrives</div><h2>Her file comes with her.</h2><p>Information for the receiving company.</p></div>`;
     } else {
       switch(mode) {
-        case'intro': el.innerHTML=photo('workplace',beat<0?'A job prepared for radiography':label);break;
+        case'intro': el.innerHTML=welcomePrinciples();break;
+        case'guide-intro': el.innerHTML=welcomePrinciples(true);break;
+        case'b1-followup':el.innerHTML=B1Followup.render(p.cue,beat);break;
+        case'optimisation-hall':el.innerHTML=OptimisationHall.render(p.cue,beat);break;
+        case'justification-path':el.innerHTML=JustificationPath.render(p.cue,beat);break;
+        case'protection-principles':el.innerHTML=ProtectionPrinciples.render(p.cue,beat);break;
+        case'bram-request':el.innerHTML=BramRequest.render(p.cue,beat);break;
+        case'protection-roles':el.innerHTML=ProtectionRoles.render(p.cue,beat);break;
+        case'course-journey':el.innerHTML=CourseJourney.render(p.cue,beat);break;
         case'workplace':el.innerHTML=photo('workplace',label);break;
         case'control-unit':el.innerHTML=photo('detector-control','Digital detector and control unit');break;
         case'equipment-pair':el.innerHTML=`<div class="visual-frame equipment-pair"><figure><img src="xray.png" alt="Supplied X-ray generator reference"><figcaption>X-ray generator</figcaption></figure><figure><img src="gamma.png" alt="Supplied gamma projector reference"><figcaption>Gamma projector</figcaption></figure>${labelHTML(label)}</div>`;break;
@@ -249,7 +320,7 @@
       // Named participants occupy a reserved strip, never cover the document or controls.
       if(person&&CAST.people[person]&&person!=='tom') {
         stage.classList.add('has-participant');
-        const pose=person==='daniel'?(/phone|call|telephone/i.test(hint+' '+p.text)&&mode!=='people'?2:/check.*meter/i.test(hint)?1:0):person==='clara'?(/hand.?over|offers/i.test(hint)?1:/listen/i.test(hint)?2:0):person==='bram'?(/point|field/i.test(hint)?1:0):0;
+        const pose=mode==='bram-request'?(pn===2?2:pn===5?1:0):mode==='protection-roles'?0:person==='daniel'?(/phone|call|telephone/i.test(hint+' '+p.text)&&mode!=='people'?2:/check.*meter/i.test(hint)?1:0):person==='clara'?(/hand.?over|offers/i.test(hint)?1:/listen/i.test(hint)?2:0):person==='bram'?(/point|field/i.test(hint)?1:0):0;
         sprite(person,pose,'right',.74);
       }
     }
@@ -268,9 +339,19 @@
     }
     if(resumed)status=status.filter(s=>s[0]!=='held');
     status.forEach(([cl,icon,text,title,body])=>{const btn=document.createElement('button');btn.className='status-'+cl;btn.textContent=`${icon} ${text}`;btn.setAttribute('aria-label',`${text}: open explanation`);btn.onclick=()=>window.Player?.reader(title,`<p>${esc(body)}</p><p>${esc(cl==='unknown'?'An unknown is kept open until evidence establishes it.':cl==='held'?'This is the work status. It is not a conclusion about the cause.':'This records an observed fact. It does not establish an unobserved cause.')}</p>`);$('status-controls').append(btn);});
+    if(lid==='B1.1'){
+      const reviewed=B11Reviewed.render(p.cue,beat);
+      if(reviewed!==null)el.innerHTML=reviewed;
+      el.classList.add('reviewed-visual');
+      B11Reviewed.bind(el);
+    }else el.classList.remove('reviewed-visual');
+    B1Followup.bind(el);
+    el.querySelectorAll('[data-oh-source]').forEach(btn=>btn.onclick=()=>OptimisationHall.openSource());
+    el.querySelectorAll('[data-jp-source]').forEach(btn=>btn.onclick=()=>JustificationPath.openSource(btn.dataset.jpSource));
     el.querySelectorAll('[data-open-doc]').forEach(btn=>btn.onclick=()=>window.Player.document(btn.dataset.openDoc));
   }
   function renderCurrent(){if(current)render(current.lid,current.scene,current.p,current.beat);}
   window.addEventListener('resize',renderCurrent);
   window.Visuals={render,renderCurrent,rows,paper,documentView,esc,sprite};
 })();
+
