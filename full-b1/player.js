@@ -3,14 +3,14 @@
   'use strict';
   const $=id=>document.getElementById(id), esc=Visuals.esc;
   const audio=new Audio();audio.preload='auto';
-  const KEY='radiation-b1-reviewed-310';
+  const KEY='radiation-b1-reviewed-320';
   let saved={};try{
     const current=localStorage.getItem(KEY);saved=JSON.parse(current||'{}');
-    if(!current){const previous=JSON.parse(localStorage.getItem('radiation-b1-owner-reset-301')||'{}');
+    if(!current){const previous=JSON.parse(localStorage.getItem('radiation-b1-reviewed-310')||localStorage.getItem('radiation-b1-owner-reset-301')||'{}');
       for(const k of ['notes','captions','volume','speed'])if(previous[k]!==undefined)saved[k]=previous[k];
-      if(previous.position?.li>0)saved.position=previous.position;
-      saved.completed=Object.fromEntries(Object.entries(previous.completed||{}).filter(([k])=>!k.startsWith('B1.1-')));
-      saved.answers=Object.fromEntries(Object.entries(previous.answers||{}).filter(([k])=>!k.startsWith('B1.1-')));
+      if(previous.position&&previous.position.li!==1)saved.position=previous.position;
+      saved.completed=Object.fromEntries(Object.entries(previous.completed||{}).filter(([k])=>!k.startsWith('B1.2-')));
+      saved.answers=Object.fromEntries(Object.entries(previous.answers||{}).filter(([k])=>!k.startsWith('B1.2-')));
     }
   }catch{}
   const resumePosition=saved.position;let lastSave=0,lastFrame=0;
@@ -59,8 +59,9 @@
     setClip(paragraph().clip,paragraphDone,play);
     if(offset)audio.addEventListener('loadedmetadata',()=>{audio.currentTime=Math.min(offset,audio.duration-.05);},{once:true});
     history.replaceState(null,'',`#${lesson().id}-${scene().id}-P${pi+1}`);
-    $('legal-basis').hidden=lesson().id!=='B1.1';
+    $('legal-basis').hidden=!['B1.1','B1.2'].includes(lesson().id);
     if(lesson().id==='B1.1'){$('legal-basis').textContent=B11Reviewed.source(paragraph().cue).label+' ↗';$('legal-basis').onclick=()=>B11Reviewed.openSource(paragraph().cue);}
+    if(lesson().id==='B1.2'){$('legal-basis').textContent=B12Reviewed.source(paragraph().cue).label+' ↗';$('legal-basis').onclick=()=>B12Reviewed.openSource(paragraph().cue);}
     updateControls();persist();
   }
   function paragraphDone(){
@@ -96,7 +97,7 @@
     stop();phase='activity';activityOpened=true;auto=false;beat=-1;
     const i=scene().interaction;if(!i){completeScene();return;}
     $('stage').classList.add('question-mode');$('activity').hidden=false;$('status-controls').innerHTML='';
-    $('activity').className=i.reviewed_b11?'reviewed-question':i.visual_context?'case-activity':'';
+    $('activity').className=i.reviewed_b11||i.reviewed_b12?'reviewed-question':i.visual_context?'case-activity':'';
     $('stage').dataset.interaction=i.id;$('stage').dataset.promptPlays=promptPlays;
     $('activity').innerHTML=activityHeader(i)+'<div id="question-work"></div><div id="answer-feedback" hidden></div><div class="activity-actions" id="answer-actions"></div>';
     $('hear-question').onclick=()=>speakPrompt();
@@ -112,9 +113,10 @@
     const mode=i.id==='B1.1-R01'&&!i.visual_context?'document-choices':i.id==='B1.5-R01'?'record-choices':'answers';
     $('question-work').innerHTML=(i.situation_visible_text?`<p class="situation">${esc(i.situation_visible_text)}</p>`:'')+(mode==='answers'?`<fieldset><legend class="sr-only">Choose one response</legend>${i.options.map((o,j)=>`<label class="answer"><input type="radio" name="response" value="${esc(o.id)}"><span>${esc(o.text)}</span></label>`).join('')}</fieldset>`:`<div class="${mode}" role="group" aria-label="Select one ${mode==='document-choices'?'document':'record line'}">${i.options.map(o=>`<button data-choice="${esc(o.id)}" aria-pressed="false">${esc(o.text)}</button>`).join('')}</div>`);
     if(i.visual_context)B1Followup.decorate(i);
+    if(i.layout==='handover_documents')$('question-work').innerHTML=B12Reviewed.handoverChoices(i);
     $('answer-actions').innerHTML='<button class="primary" id="check-answer" disabled>Check</button>';
     $('question-work').querySelectorAll('input').forEach(n=>n.onchange=()=>{selected=n.value;$('check-answer').disabled=false;});
-    $('question-work').querySelectorAll('[data-choice]').forEach(n=>n.onclick=()=>{selected=n.dataset.choice;$('question-work').querySelectorAll('[data-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b===n)));$('check-answer').disabled=false;});
+    $('question-work').querySelectorAll('[data-choice]').forEach(n=>n.onclick=()=>{selected=n.dataset.choice;$('question-work').querySelectorAll('[data-choice]').forEach(b=>b.setAttribute('aria-pressed',String(b===n)));if(i.layout==='handover_documents')B12Reviewed.chooseHandover(i,selected);$('check-answer').disabled=false;});
     $('check-answer').onclick=check;
   }
   function check(){

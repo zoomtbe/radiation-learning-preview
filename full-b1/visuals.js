@@ -184,6 +184,11 @@
     current={lid,scene,p,beat};renderKey=`${p.cue}:${beat}`;
     stage.dataset.cue=p.cue;stage.dataset.beat=beat;stage.dataset.scene=`${lid}-${scene.id}`;
     cast.replaceChildren();stage.classList.remove('without-presenter','has-participant','handover-scene','handover-offer');
+    if(lid==='B1.2'){
+      el.dataset.family='reviewed-b12';el.classList.add('reviewed-visual');
+      el.innerHTML=B12Reviewed.render(p.cue,beat);$('status-controls').replaceChildren();
+      return;
+    }
     const b=Math.max(beat,0), n=+scene.id.slice(1), pn=+p.cue.split('-P')[1];
     let mode=family[lid][n-1], label=labelAt(p,beat), hint=beat<0?p.start_visual:(p.beats[beat]?.show||p.start_visual);
     hint=hint||'';
