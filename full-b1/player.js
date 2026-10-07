@@ -22,7 +22,7 @@
   const persist=()=>{saved.position={li,si,pi,time:audio.currentTime||0,phase};saved.captions=captions;saved.speed=+$('speed').value;saved.position.caseIndex=caseIndex;try{localStorage.setItem(KEY,JSON.stringify(saved));}catch{}};
   const stop=()=>{audio.pause();token++;doneCallback=null;};
   function setClip(id,onEnd,play=false){
-    stop();clip=id;doneCallback=onEnd;audio.src=`${id}.mp3`;audio.playbackRate=+$('speed').value;audio.currentTime=0;
+    stop();clip=id;doneCallback=onEnd;audio.src=`${id}.mp3?v=${encodeURIComponent(COURSE.version)}`;audio.playbackRate=+$('speed').value;audio.currentTime=0;
     $('captions').textContent='';
     $('stage').dataset.audio=id;$('stage').dataset.phase=phase;
     if(play)playAudio();else updateControls();
